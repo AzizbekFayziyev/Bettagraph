@@ -1,0 +1,715 @@
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@400;500;600&display=swap');
+
+// Varribles
+
+$color-light: #ffffff;
+$color-black: #111111;
+$color-gray: #a7a7a7;
+$color-blue: #73C1DD;
+$color-main: #290628;
+$color-pink: #9508AE;
+$font-main: 'Hepta Slab', serif;
+
+// Global Styles
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-main !important;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  font-family: $font-main !important;
+  text-transform: none !important;
+}
+
+// Custom scrollbar
+
+::-webkit-scrollbar-track {
+  background: $color-main;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-light;
+  border-radius: 20px;
+}
+
+// Custom selection
+
+::selection {
+  background-color: $color-pink;
+  color: $color-light ;
+}
+
+// Mixins
+
+@mixin Title {
+  font-weight: 500;
+  color: $color-light;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+
+// Header styles
+
+.header {
+  margin-top: 180px;
+  position: relative;
+
+  &__text {
+    h1 {
+      color: $color-light;
+      font-weight: 600;
+      line-height: 50px;
+      max-width: 500px;
+
+      .light {
+        color: $color-blue;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      margin-top: 40px;
+      color: $color-gray;
+      max-width: 620px;
+    }
+  }
+
+  &__actions {
+    margin-top: 40px;
+
+    button {
+      font-weight: 600;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: -180px;
+    right: -420px;
+    z-index: -1;
+  }
+}
+
+// About section styles
+
+.about {
+  margin-top: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__imgs {
+    margin-top: 80px;
+    width: 400px;
+    position: relative;
+
+    &_main {
+      width: 400px;
+      position: static !important;
+      z-index: 1;
+    }
+
+    img {
+      position: absolute;
+
+      &:nth-child(2) {
+        width: 200px;
+        z-index: 2;
+        bottom: -50px;
+        right: -50px;
+      }
+
+      &:nth-child(3) {
+        width: 160px;
+        z-index: -1;
+        top: -70px;
+        right: -50px;
+      }
+
+      &:nth-child(4) {
+        width: 120px;
+        z-index: 2;
+        top: 80px;
+        left: -40px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 600px;
+
+    h6 {
+      @include Title();
+    }
+
+    p {
+      color: $color-light;
+      font-size: 18px;
+      text-align: justify;
+
+      span {
+        color: $color-blue;
+      }
+    }
+
+    button {
+      margin-top: 40px;
+
+    }
+  }
+}
+
+.hero-mobile {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+// Service section styles
+
+.services {
+  margin-top: 120px;
+
+  h6 {
+    @include Title();
+  }
+
+  &__card {
+    max-width: 480px;
+    min-height: 150px;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: $color-light;
+
+    h5 {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 600;
+
+      svg {
+        border-radius: 8px;
+        background: $color-main;
+        color: $color-light;
+        font-size: 40px;
+        padding: 8px;
+        margin-right: 10px;
+      }
+    }
+
+    p {
+      margin-top: 20px;
+    }
+  }
+}
+
+// Work Progress section styles
+
+.progress {
+  margin-top: 80px;
+
+  h6 {
+    @include Title();
+  }
+
+  &__stairs {
+    margin-top: 40px;
+
+    &_item {
+      width: 120px;
+      height: 120px;
+      min-width: 120px;
+      min-height: 120px;
+      background: $color-light;
+      opacity: 0.05;
+
+      &:nth-child(2) {
+        margin-left: 120px;
+      }
+
+      &:nth-child(4) {
+        margin-left: 120px;
+      }
+
+      &:nth-child(6) {
+        margin-left: 120px;
+      }
+
+
+
+      &:nth-child(8) {
+        margin-left: 120px;
+      }
+
+      &:nth-child(10) {
+        display: none;
+      }
+    }
+
+    &_content {
+      display: flex;
+      align-items: center;
+
+      &:nth-child(3) {
+        margin-left: 240px;
+      }
+
+      &:nth-child(7) {
+        margin-left: 240px;
+      }
+    }
+
+    &_mobItem {
+      margin-right: 20px;
+
+      div {
+        display: grid;
+        place-items: center;
+        width: 45px;
+        height: 45px;
+        background: $color-light;
+        font-size: 20px;
+        font-weight: 600;
+
+        &:nth-child(2) {
+          background-color: #695168;
+        }
+
+        &:nth-child(3) {
+          background-color: #3E1F3E;
+        }
+      }
+    }
+
+    .primary {
+      display: grid;
+      place-content: center;
+      font-size: 24px;
+      font-weight: 600;
+      opacity: 1 !important;
+    }
+
+    &_text {
+      max-width: 800px;
+
+      h5 {
+        color: $color-blue;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      p {
+        color: $color-light;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// Contact form section
+
+.border {
+  padding: 40px 0;
+  border-top: 1px solid #571057;
+  border-bottom: 1px solid #571057;
+  margin-top: 80px;
+
+  .contact {
+    padding: 60px;
+    background-color: $color-light;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h6 {
+      @include Title();
+    }
+
+    &__form {
+      max-width: 600px;
+      margin-right: 20px;
+
+      h6 {
+        color: $color-black;
+        margin: 0;
+      }
+
+      p {
+        margin: 15px 0;
+      }
+
+      .input {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__info {
+      background-color: $color-pink;
+      padding: 30px;
+      border-radius: 8px;
+
+      p {
+        display: flex;
+        align-items: center;
+        color: $color-light;
+        margin: 40px 0;
+
+        svg {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+// Vacancy section styles
+
+.vacancy {
+  margin-top: 40px;
+  background-color: $color-light;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+
+  &__content {
+    max-width: 1000px;
+
+    h6 {
+      @include Title();
+      color: $color-black;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-weight: 500;
+      color: $color-black;
+
+      span {
+        color: $color-blue;
+      }
+    }
+
+    form {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+
+      .input {
+        max-width: 200px;
+        min-width: 150px;
+        margin-right: 20px;
+      }
+
+      button {
+        color: $color-light;
+        padding: 6px 50px;
+      }
+    }
+  }
+
+  img {
+    max-width: 220px;
+  }
+}
+
+// Footer
+
+footer {
+  margin-top: 80px;
+  padding: 10px;
+  background-color: $color-light;
+
+  img {
+    margin: 20px 100px;
+  }
+
+  .icon {
+    transition: .3s ease;
+
+    &:hover {
+      background-color: $color-main;
+    }
+  }
+}
+
+// Drawer customization
+.css-1160xiw-MuiPaper-root-MuiDrawer-paper,
+.css-1ab2xsx {
+  background-color: #0000004d !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+// Responsive 
+
+@media (max-width: 1100px) {
+  .header img {
+    width: 800px;
+  }
+
+  .about {
+    margin-top: 180px;
+
+    &__text {
+      z-index: 5;
+    }
+
+    &__imgs {
+      &_main {
+        width: 350px;
+
+      }
+
+      img {
+        &:nth-child(2) {
+          width: 180px;
+        }
+
+        &:nth-child(3) {
+          width: 150px;
+        }
+
+        &:nth-child(4) {
+          width: 110px;
+        }
+      }
+    }
+  }
+
+  .vacancy {
+    padding-bottom: 20px;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .header {
+    margin-top: 120px;
+
+    img {
+      right: -500px;
+    }
+  }
+
+  .about {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+    &__text {
+      margin-top: 20px;
+    }
+  }
+
+  .progress {
+    &__stairs {
+      margin-top: 0;
+
+      &_content {
+        align-items: start;
+        margin-top: 20px;
+        margin-left: 0 !important;
+      }
+
+      &_text {
+        margin-top: 0;
+        h5 {
+          margin-bottom: 10px;
+        }
+      }
+
+      &_item {
+        display: none;
+      }
+
+
+      .primary {
+        display: none;
+      }
+    }
+  }
+
+  .border .contact {
+    flex-direction: column;
+    padding: 15px;
+
+    &__form {
+      margin-right: 0;
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+
+    &__info {
+      width: 100%;
+    }
+  }
+
+  .vacancy {
+    flex-direction: column;
+    align-items: center;
+
+    form {
+      flex-direction: column;
+
+      .input {
+        margin-right: 0;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  footer img{
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
+    &__text {
+      h1 {
+        font-size: 22px !important;
+        text-shadow: 0 0 10px #333333;
+
+        .light {
+          font-size: 28px !important;
+        }
+      }
+
+      p {
+        margin-top: 15px;
+        font-size: 14px !important;
+        text-shadow: 0 0 5px #333333;
+      }
+    }
+
+    &__actions {
+      margin-top: 20px;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  .about {
+    margin-top: 0 !important;
+
+    &__imgs {
+      margin-top: 100px;
+
+      &_main {
+        width: 280px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      img {
+
+        &:nth-child(2) {
+          width: 160px;
+          left: 65px;
+        }
+
+        &:nth-child(3) {
+          z-index: 2;
+          width: 120px;
+          left: 20px;
+          top: -60px;
+
+        }
+
+        &:nth-child(4) {
+          z-index: 2;
+          width: 80px;
+          top: 60px;
+          left: auto;
+          right: 40px;
+        }
+      }
+    }
+  }
+
+  .progress {
+    &__stairs {
+      &_text {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 420px) {
+  .header {
+    &__text h1 {
+      font-size: 28px;
+    }
+  }
+
+  .hero-mobile {
+    width: 100%;
+  }
+
+  .contact {
+    &__info p {
+      font-size: 14px;
+
+      &:nth-child(2) {
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+@media(max-width: 280px) {
+  .about {
+    &__imgs {
+      display: none;
+    }
+  }
+}
